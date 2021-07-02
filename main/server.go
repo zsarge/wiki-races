@@ -18,13 +18,15 @@ func wikiHandler(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "text/html")
 	if name != "" {
+		start := time.Now()
 		text, err := getPageText(name)
-
 		if err != nil {
 			log.Panic(err)
 		}
 
-		log.Printf("Handled Page #%d", numberOfPagesHandled)
+		duration := time.Since(start)
+
+		log.Printf("Handled Page #%d in %s", numberOfPagesHandled, duration)
 		numberOfPagesHandled++
 
 		_, err = io.WriteString(w, text)
@@ -48,11 +50,6 @@ func main() {
 	r.HandleFunc("/wiki/{name}", wikiHandler)
 	// r.PathPrefix("/").Handler(catchAllHandler)
 	// http.Handle("/", r)
-
-	// http.HandleFunc("/wiki", wikiHandler)
-	// log.Panic(
-	// 	http.ListenAndServe(":3000", nil),
-	// )
 
 	srv := &http.Server{
 		Handler: r,
