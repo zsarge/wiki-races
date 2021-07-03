@@ -8,6 +8,10 @@ I wish I did for my first design.
 Given that this project uses Go and Vuejs, it's a little less
 beginner friendly than the last version, which used only Javascript.
 
+Notes:
+
+- [server.go](main/server.go) serves the frontend in [frontend](frontend)
+
 Todo:
 
 - add page viewer
