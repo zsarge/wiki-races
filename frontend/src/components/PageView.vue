@@ -1,5 +1,7 @@
 <template>
-  <div class="PageView">This is the wikipedia content</div>
+  <div class="PageView">
+    <iframe id="wikipedia-frame" frameborder="0"> </iframe>
+  </div>
 </template>
 
 <script lang="ts">
