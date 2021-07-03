@@ -14,7 +14,9 @@ Notes:
 
 Todo:
 
+- fix encoding issues in page generation
 - add page viewer
 - Cache files
 - Add pin number for letting people into games
 - add leaderboard
+- add time sync for all clients
